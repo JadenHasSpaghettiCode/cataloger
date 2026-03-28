@@ -1,0 +1,24 @@
+{
+  "name": "cataloger",
+  "description": "Sync shared Bun catalog dependencies in Turborepo monorepos",
+  "bin": {
+    "cataloger": "./src/index.ts"
+  },
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build --compile --minify --bytecode src/index.ts --outfile dist/cataloger",
+    "dev": "bun run src/index.ts",
+    "doctor": "bun run scripts/doctor.ts",
+    "setup": "bun run scripts/setup.ts",
+    "typecheck": "bunx tsc --noEmit",
+    "uninstall": "bun run scripts/uninstall.ts"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.10.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.9.3"
+  }
+}
